@@ -1,12 +1,12 @@
 {
-  "name": "opencode-go-session",
-  "version": "1.1.0",
+  "name": "kimi-opencode-go-session",
+  "version": "1.2.0",
   "description": "Kimi Code plugin: per-session x-opencode-session header for OpenCode Go models via a loopback proxy",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caorenmei/opencode-go-session.git"
+    "url": "git+https://github.com/caorenmei/kimi-opencode-go-session.git"
   },
   "engines": {
     "node": ">=18"

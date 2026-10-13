@@ -1,6 +1,6 @@
 {
-  "name": "opencode-go-session",
-  "version": "1.1.0",
+  "name": "kimi-opencode-go-session",
+  "version": "1.2.0",
   "description": "Fixes OpenCode Go's 400 'Request is missing x-opencode-session' for Kimi Code: a loopback proxy injects the required session header per request, derived from the calling session's prompt_cache_key. Concurrency-safe and stable across resume.",
   "keywords": ["opencode", "opencode-go", "session", "proxy", "headers"],
   "interface": {

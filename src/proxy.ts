@@ -1,4 +1,4 @@
-// opencode-go-session proxy
+// kimi-opencode-go-session proxy
 //
 // Loopback proxy that forwards requests to the OpenCode Go upstream and adds
 // the x-opencode-session header it requires. Header value is taken per request

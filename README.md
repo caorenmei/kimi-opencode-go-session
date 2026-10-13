@@ -1,4 +1,4 @@
-# opencode-go-session
+# kimi-opencode-go-session
 
 A [Kimi Code](https://www.kimi.com/code/) plugin that fixes OpenCode Go's
 `400 Request is missing x-opencode-session` error when using `opencode-go/*`
@@ -44,7 +44,7 @@ The proxy stamps each request with `x-opencode-session`, resolved from:
 In Kimi Code:
 
 ```
-/plugins install https://github.com/caorenmei/opencode-go-session
+/plugins install https://github.com/caorenmei/kimi-opencode-go-session
 /reload
 ```
 
@@ -70,19 +70,19 @@ not own.
 
 ## Uninstall
 
-1. `/plugins remove opencode-go-session`, then `/reload`
-2. Restore `~/.kimi-code/config.toml.bak-opencode-go-session` over
+1. `/plugins remove kimi-opencode-go-session`, then `/reload`
+2. Restore `~/.kimi-code/config.toml.bak-kimi-opencode-go-session` over
    `~/.kimi-code/config.toml` (created once, before the plugin's first rewrite)
 3. The proxy exits on its own after the idle timeout
 
 ## Troubleshooting
 
 ```bash
-curl http://127.0.0.1:18321/__opencode-go-session/health
-# {"name":"opencode-go-session","version":"1.1.0","pid":...,"upstream":"https://opencode.ai"}
+curl http://127.0.0.1:18321/__kimi-opencode-go-session/health
+# {"name":"kimi-opencode-go-session","version":"1.1.0","pid":...,"upstream":"https://opencode.ai"}
 ```
 
-Runtime state lives in `$KIMI_CODE_HOME/opencode-go-session/`:
+Runtime state lives in `$KIMI_CODE_HOME/kimi-opencode-go-session/`:
 
 - `proxy.log` — one line per proxied request, including the injected id
 - `plugin.log` — hook diagnostics (hooks never print to stdout, since hook
@@ -132,10 +132,10 @@ There are no runtime dependencies — only Node.js built-ins.
 安装（在 Kimi Code 中执行）：
 
 ```
-/plugins install https://github.com/caorenmei/opencode-go-session
+/plugins install https://github.com/caorenmei/kimi-opencode-go-session
 /reload
 ```
 
 无需任何手工配置。如遇端口冲突，设置环境变量 `KIMI_OPENCODE_GO_PROXY_PORT` 后 `/reload`，
-配置会自动迁移到新端口。排错日志在 `~/.kimi-code/opencode-go-session/`（`proxy.log` /
+配置会自动迁移到新端口。排错日志在 `~/.kimi-code/kimi-opencode-go-session/`（`proxy.log` /
 `plugin.log`）。卸载见上文 Uninstall。许可：MIT。

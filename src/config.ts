@@ -1,11 +1,11 @@
-// Shared constants for the opencode-go-session plugin. Importing this module
+// Shared constants for the kimi-opencode-go-session plugin. Importing this module
 // has no side effects (proxy.js must not be imported for values — it starts a
 // server on load).
 import { join } from "node:path";
 import { homedir } from "node:os";
 
-export const NAME = "opencode-go-session";
-export const VERSION = "1.1.0";
+export const NAME = "kimi-opencode-go-session";
+export const VERSION = "1.2.0";
 
 export const PORT = Number(process.env.KIMI_OPENCODE_GO_PROXY_PORT || 18321);
 export const UPSTREAM_ORIGIN =
