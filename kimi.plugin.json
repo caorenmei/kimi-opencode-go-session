@@ -1,0 +1,23 @@
+{
+  "name": "opencode-go-session",
+  "version": "1.1.0",
+  "description": "Fixes OpenCode Go's 400 'Request is missing x-opencode-session' for Kimi Code: a loopback proxy injects the required session header per request, derived from the calling session's prompt_cache_key. Concurrency-safe and stable across resume.",
+  "keywords": ["opencode", "opencode-go", "session", "proxy", "headers"],
+  "interface": {
+    "displayName": "OpenCode Go Session Header",
+    "shortDescription": "Per-session x-opencode-session header for opencode-go models",
+    "longDescription": "OpenCode Go rejects requests that lack a stable x-opencode-session header. This plugin runs a loopback proxy (default 127.0.0.1:18321), points every opencode-go base_url in config.toml at it, and stamps each request with the caller's session id. Concurrent sessions get distinct ids; resumed sessions keep theirs."
+  },
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "command": "node ./dist/hooks/ensure.js sync-config",
+      "timeout": 10
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "node ./dist/hooks/ensure.js",
+      "timeout": 10
+    }
+  ]
+}
